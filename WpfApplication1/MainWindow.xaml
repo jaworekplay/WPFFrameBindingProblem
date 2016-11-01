@@ -1,0 +1,28 @@
+﻿<Window x:Class="WpfApplication1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication1"
+        xmlns:views="clr-namespace:WpfApplication1.Views"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <!--<Window.DataContext>
+        <local:MainVM/>
+    </Window.DataContext>-->
+    <Window.Resources>
+        <local:MainVM x:Key="mainVM"/>
+        <local:LoginPage x:Key="login" DataContext="{StaticResource mainVM}"/>
+        <views:Page2 x:Key="SearchPage" DataContext="{StaticResource mainVM}"/>
+        <!---->
+        <ControlTemplate x:Key="ctrlTmpl">
+            <local:LoginPage/>
+        </ControlTemplate>
+        
+    </Window.Resources>
+    <Grid>
+        <!--<Button x:Name="button" Content="Do something" Click="btnDoSomething" HorizontalAlignment="Left" Margin="221,60,0,0" VerticalAlignment="Top" Width="75"/>-->
+        <!--<Control Template="{StaticResource ctrlTmpl}"/> This works-->
+        <Frame Content="{StaticResource SearchPage}"/>
+    </Grid>
+</Window>
