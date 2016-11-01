@@ -19,3 +19,6 @@ C:\Users\jawor_000\documents\visual studio 2015\Projects\WpfApplication1\WpfAppl
 C:\Users\jawor_000\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\LoginPage.baml
 C:\Users\jawor_000\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\Views\Page2.g.cs
 C:\Users\jawor_000\documents\visual studio 2015\Projects\WpfApplication1\WpfApplication1\obj\Debug\Views\Page2.baml
+C:\Users\jawor_000\Documents\Visual Studio 2015\Projects\WpfApplication1\WPFFrameBindingProblem\WpfApplication1\bin\Debug\WpfApplication1.exe.config
+C:\Users\jawor_000\Documents\Visual Studio 2015\Projects\WpfApplication1\WPFFrameBindingProblem\WpfApplication1\obj\Debug\WpfApplication1.exe
+C:\Users\jawor_000\Documents\Visual Studio 2015\Projects\WpfApplication1\WPFFrameBindingProblem\WpfApplication1\obj\Debug\WpfApplication1.pdb
