@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Threading;
 using WpfApplication1.Commands;
+using Model;
 
 namespace WpfApplication1
 {
@@ -43,6 +44,15 @@ namespace WpfApplication1
             set { searchKey = value; OnPropertyChanged("SearchKey"); }
         }
 
+        private List<ExampleItem> _list;
+
+        public List<ExampleItem> List
+        {
+            get { return _list; }
+            set { _list = value; OnPropertyChanged("List"); }
+        }
+
+
         Dispatcher _dispatcher = Dispatcher.CurrentDispatcher;
         //Time consuming operation
         private void LongTask()
@@ -77,12 +87,23 @@ namespace WpfApplication1
 
         public event EventHandler ComponentsLoaded;
 
+        private void OnLoaded()
+        {
+            _dispatcher.Invoke(() => {
+                if (ComponentsLoaded != null)
+                {
+                    ComponentsLoaded(this, new EventArgs { });
+                }
+            });
+        }
 
         #region INotify
-        public void OnPropertyChanged(string prop)
+        private void OnPropertyChanged(string prop)
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+            _dispatcher.Invoke(() => {
+                if (PropertyChanged != null)
+                    PropertyChanged(this, new PropertyChangedEventArgs(prop));
+            });
         }
         public event PropertyChangedEventHandler PropertyChanged; 
         #endregion
