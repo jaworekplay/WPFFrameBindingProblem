@@ -22,6 +22,11 @@ namespace WpfApplication1
         private void InitialiseComponents()
         {
             LoginCommand = new RelayCommand(loginCommandMethod);
+            List = new List<ExampleItem>();
+            for (int i = 0; i < 100; i++)
+            {
+                List.Add(new ExampleItem { Name = "Gabe"+i.ToString(), Age = 2 * i });
+            }
         }
 
         private RelayCommand _loginCommand;

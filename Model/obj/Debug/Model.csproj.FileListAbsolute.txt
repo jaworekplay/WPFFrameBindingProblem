@@ -1,0 +1,5 @@
+C:\Users\jawor_000\Documents\Visual Studio 2015\Projects\WpfApplication1\WPFFrameBindingProblem\Model\bin\Debug\Model.dll
+C:\Users\jawor_000\Documents\Visual Studio 2015\Projects\WpfApplication1\WPFFrameBindingProblem\Model\bin\Debug\Model.pdb
+C:\Users\jawor_000\Documents\Visual Studio 2015\Projects\WpfApplication1\WPFFrameBindingProblem\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\jawor_000\Documents\Visual Studio 2015\Projects\WpfApplication1\WPFFrameBindingProblem\Model\obj\Debug\Model.dll
+C:\Users\jawor_000\Documents\Visual Studio 2015\Projects\WpfApplication1\WPFFrameBindingProblem\Model\obj\Debug\Model.pdb

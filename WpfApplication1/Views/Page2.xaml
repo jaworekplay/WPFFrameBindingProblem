@@ -8,31 +8,9 @@
       d:DesignHeight="300" d:DesignWidth="300"
       Title="Page2">
     <Page.Resources>
-        <Style TargetType="ListBoxItem" x:Key="RegListBoxItem">
-            <Setter Property="Opacity" Value="0.5" />
-            <Setter Property="MinHeight" Value="50" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="ListBoxItem">
-                        <Border Name="_Border"
-                        Padding="2"
-                        SnapsToDevicePixels="true">
-                            <ContentPresenter />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsSelected" Value="true">
-                                <Setter Property="Opacity" Value="1.0" />
-                                <Setter Property="MinHeight" Value="100" />
-                                <Setter TargetName="_Border" Property="Effect">
-                                    <Setter.Value>
-                                        <DropShadowEffect BlurRadius="25" ShadowDepth="8" Direction="270" Color="Black" Opacity=".42" RenderingBias="Performance" />
-                                    </Setter.Value>
-                                </Setter>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
+        
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
         </Style>
     </Page.Resources>
     <Grid>
@@ -48,9 +26,36 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <TextBox Text="{Binding SearchKey, UpdateSourceTrigger=PropertyChanged}"/>
-        <Button Grid.Column="1" Content="Search" Command="{Binding SearchCommand}"/><!--There is an example of command in VM already called login command-->
-        <ListBox Grid.Row="1" Grid.ColumnSpan="3" Background="#00FFFFFF">
-            
+        <Button Grid.Column="1" Content="Search" Command="{Binding LoginCommand}"/><!--There is an example of command in VM already called login command-->
+        <ListBox Grid.Row="1" Grid.ColumnSpan="3" ItemsSource="{Binding List}" DisplayMemberPath="Name">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem" >
+                    <Setter Property="Opacity" Value="0.5" />
+                    <Setter Property="MinHeight" Value="50" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListBoxItem">
+                                <Border Name="_Border"
+                                    Padding="2"
+                                    SnapsToDevicePixels="true">
+                                    <ContentPresenter />
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="true">
+                                        <Setter Property="Opacity" Value="1.0" />
+                                        <Setter Property="MinHeight" Value="100" />
+                                        <Setter TargetName="_Border" Property="Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect BlurRadius="25" ShadowDepth="8" Direction="270" Color="Black" Opacity=".42" RenderingBias="Performance" />
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListBox.ItemContainerStyle>
         </ListBox>
     </Grid>
 </Page>
