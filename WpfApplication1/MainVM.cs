@@ -85,6 +85,18 @@ namespace WpfApplication1
             LongTask();
         }
 
+        protected void ExecuteOnUIThread(Action _t)
+        {
+            _dispatcher.Invoke(_t);
+        }
+        protected void ExecuteOnUIThread(Action<object> _tp, object parameter)
+        {
+            _dispatcher.Invoke(() =>
+            {
+                _tp.Invoke(parameter);
+            });
+        }
+
         public event EventHandler ComponentsLoaded;
 
         private void OnLoaded()
